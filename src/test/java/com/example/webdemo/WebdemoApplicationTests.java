@@ -28,6 +28,7 @@ class WebdemoApplicationTests {
 
     @Test
     void testRestTemplate() {
+        // 这么看比okio retrofit还简洁了
         Book book = restTemplate.
                 getForObject("http://192.168.31.189:8080/getFirst", Book.class);
         System.out.println(book.toString());
