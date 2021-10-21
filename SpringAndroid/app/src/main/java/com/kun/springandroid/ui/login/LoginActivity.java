@@ -122,12 +122,14 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                loadingProgressBar.setVisibility(View.VISIBLE);
-//                loginViewModel.login(usernameEditText.getText().toString(),
-//                        passwordEditText.getText().toString());
+                loadingProgressBar.setVisibility(View.VISIBLE);
+                loginViewModel.login(usernameEditText.getText().toString(),
+                        passwordEditText.getText().toString());
 
-                getData();
             }
+        });
+        binding.textview.setOnClickListener(v -> {
+           getData();
         });
     }
 
@@ -148,8 +150,9 @@ public class LoginActivity extends AppCompatActivity {
         // 需要ipv4，127，localhost都不好使
         // 需要ipv4，127，localhost都不好使
         // 需要ipv4，127，localhost都不好使
-        url = "http://192.168.31.189:8080/getBookById/" + binding.username.getText().toString().trim();
-        binding.textview.setText(url);
+//        url = "http://192.168.31.189:8080/getBookById/" + binding.username.getText().toString().trim();
+//        url = "http://192.168.31.189:8080/getBooks";
+        url = binding.etUrl.getText().toString().toString();
         Log.e(TAG, "请求url=" + url);
 
         // Request a string response from the provided URL.

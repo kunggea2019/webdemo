@@ -69,9 +69,19 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.3" />
 
+    <EditText
+            android:id="@+id/et_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:hint="@string/prompt_email"
+            android:text="http://192.168.31.189:8080/"/>
     <TextView
             android:id="@+id/textview"
-            android:textColor="#690"
+            android:text="点吧"
+            android:background="#008C8C"
+            android:padding="12dp"
+            android:textColor="#0f0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:ignore="MissingConstraints" />

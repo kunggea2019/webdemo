@@ -32,13 +32,13 @@ public class HiController {
 
     }
 
-//    @Autowired
-//    BookMapper bookMapper;
-//
-//    @GetMapping("getBookList")
-//    public List<Book> getBookList(){
-//        return bookMapper.getBookList();
-//    }
+    @Autowired
+    BookMapper bookMapper;
+
+    @GetMapping("getBookList")
+    public List<Book> getBookList(){
+        return bookMapper.getBookList();
+    }
 
 
 
