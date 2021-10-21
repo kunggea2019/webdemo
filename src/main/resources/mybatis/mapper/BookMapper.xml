@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--配置未生效，mapper的路径需要是全路径,不然mapper创建失败-->
+<mapper namespace="com.example.webdemo.mapper.BookMapper">
+    <!--resultType 返回对象的类型，不管是单个对象，还是List<Bean>-->
+    <!--返回一个对象-->
+    <select id="getFirstBook" resultType="com.example.webdemo.bean.Book">
+        SELECT *
+        FROM books LIMIT 1
+    </select>
+
+    <!--返回一个数组-->
+    <select id="getBooks" resultType="com.example.webdemo.bean.Book">
+        SELECT *
+        FROM books
+    </select>
+
+
+    <!--where查询-->
+    <select id="getBookById" resultType="com.example.webdemo.bean.Book">
+        SELECT *
+        FROM books
+        where bookID = #{id}
+    </select>
+</mapper>

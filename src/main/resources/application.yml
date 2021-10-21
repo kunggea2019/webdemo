@@ -1,0 +1,52 @@
+#spring:
+#  datasource:
+#    username: root
+#    password: 123qwe,./
+#    url: jdbc:mysql://localhost:3306/ssmbuild
+
+spring:
+  application:
+    # 应用名称
+    name: com.example.webdemo
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driverClassName: com.mysql.jdbc.Driver
+      username: root
+      password: 123qwe,./
+      url: jdbc:mysql://localhost:3306/ssmbuild
+      #      url: jdbc:mysql://localhost:3306/data_one?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&useSSL=false
+      #      username: root
+      #      password: 123
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      max-evictable-idle-time-millis: 60000
+      validation-query: SELECT 1 FROM DUAL
+      # validation-query-timeout: 5000
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      #filters: #配置多个英文逗号分隔(统计，sql注入，log4j过滤)
+      filters: stat,wall
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+
+#mybatis的相关配置
+# https://www.jianshu.com/p/541874714907  整合说明
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  #mybatis中的type-aliases-package是为了配置xml文件中resultType返回值的包位置
+  #如果未配置请使用全包名
+  #  type-aliases-package: com.example.webdemo.mapper
+  #开启驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true
