@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <!--配置未生效，mapper的路径需要是全路径,不然mapper创建失败-->
+<!--总体来讲，还是XML好一些,各种标签分明白了-->
+<!--注解里面写sql类似sqllite，多了就容易乱了-->
 <mapper namespace="com.example.webdemo.mapper.BookMapper">
     <!--resultType 返回对象的类型，不管是单个对象，还是List<Bean>-->
     <!--返回一个对象-->
