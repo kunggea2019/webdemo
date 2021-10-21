@@ -8,6 +8,7 @@ import org.springframework.web.client.RestTemplate;
 public class Templates {
 
     // Spring IOC 得用起来了
+    // 如此就可以@Autowire了
     @Bean
     public RestTemplate restTemplate() {
         // 微服务中，服务间http方式的调用方式
